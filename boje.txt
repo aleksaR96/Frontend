@@ -1,0 +1,7 @@
+plava - svetlije [tab, header]: #307fa6
+plava - tamnije [tab]: #1d4c64
+
+plava - tekst: #3f82aa
+plava - highlight: #d6e5ee
+
+siva - pozadina container-fluid: #f0f2f2

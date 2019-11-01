@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--BOOTSTRAP + JQUERY-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!--FONTAWESOME 5-->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!--FONTAWESOME 4-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style media="screen">
+      .navbar-nav li {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+      .navbar-link {
+        color: white;
+      }
+      .navbar-link:hover {
+        color: white;
+      }
+      .navbar-brand {
+        color: #307fa6 !important;
+      }
+      .bg-dark {
+        background-color: #112 !important;
+      }
+      .text-dark {
+        color: #112 !important;
+      }
+      .bg-light {
+        background-color: #e8e9ea!important;
+      }
+      .form-control.navbar-select {
+        display: inline-block;
+        width: auto;
+        font-size: 0.9em;
+        margin-left: 1em;
+        border: 0;
+        background-color: #112;
+        color: white;
+      }
+      .form-control.navbar-select:active, .form-control.navbar-select:focus {
+        box-shadow: none !important;
+      }
+      .form-group.navbar-select {
+        margin-bottom: 0;
+      }
+
+      .bg-emric-light {
+        background-color: #307fa6;
+      }
+      .bg-emric-dark {
+        background-color: #1d4c64;
+      }
+      .home-tab {
+        margin-left: 0.5em;
+      }
+      .custom-tab {
+        font-size: 0.8em;
+        display: inline-block;
+        margin-right: 0.3em;
+        padding: 0.4em 0.6em;
+        text-align: center;
+        color: white;
+      }
+      .custom-tab:hover {
+        background-color: #5194bc;
+        cursor: pointer;
+      }
+      .form-control-big {
+        font-weight: bold;
+      }
+      .form-control-big:focus, .form-control-big:active {
+        box-shadow: none !important;
+      }
+      .bp-headbar {
+        background-color: transparent;
+        /* border-top: 0.1em solid #1d4c64; */
+        color: black;
+        position: relative;
+        top: 0em;
+        padding-top: 1em;
+      }
+      .bp-headbar-img-container {
+        width: 6em;
+        height: 6em;
+        background-color: white;
+        display: inline-block;
+        position: absolute;
+        top: -2.2em;
+        left: 1.5em;
+        border: 0.15em solid white;
+        /* border-radius: 50% 50%; */
+        z-index: 100;
+      }
+      .bp-headbar-img {
+        height: 100%;
+        weigh: 100%;
+        /* background: url(Berners_Finans_logo.png); */
+        background: url(tieto.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+      }
+      .bp-headbar-inner {
+        margin-left: 9em;
+      }
+      .bp-tab-content {
+        border-top: 2px solid #307fa6;
+      }
+    </style>
+
+    <title></title>
+  </head>
+  <body class="bg-light">
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark small p-1">
+      <a class="navbar-brand pt-0" href="#">emric</a>
+      <ul class="navbar-nav mr-auto small">
+        <li class="navbar-item">
+          <a href="#" class="navbar-link">Start</a>
+        </li>
+        <li class="navbar-item">
+          <a href="#" class="navbar-link">Reports</a>
+        </li>
+        <li class="navbar-item">
+          <a href="#" class="navbar-link">Portfolio</a>
+        </li>
+        <li class="navbar-item">
+          <a href="#" class="navbar-link">Contact</a>
+        </li>
+        <li class="navbar-item">
+          <a href="#" class="navbar-link">Document</a>
+        </li>
+        <li class="navbar-item">
+          <a href="#" class="navbar-link">Invoice</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav small">
+        <li class="navbar-item">
+          <div class="form-group navbar-select">
+            <label for="" class="text-secondary">Business partner:</label>
+            <select class="form-control form-control-sm navbar-select" name="">
+              <option value="">Berners Finans AB</option>
+            </select>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav small">
+        <li class="navbar-item ml-5">
+          <a href="#" class="navbar-link">EMRIC6<i class='fas fa-user ml-2'></i></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid bg-dark">
+      <div class="custom-tab home-tab bg-emric-dark">
+        <span class=""><i class='fas fa-home'></i></span>
+      </div>
+
+      <div class="custom-tab bg-emric-light">
+        <span class=""><i class='fa fa-gears mr-2'></i>Configuration</span>
+      </div>
+    </div>
+
+    <div class="container-fluid bg-emric-light py-4">
+      <div class="container">
+        <div class="form-group mb-0">
+          <select class="form-control form-control-big" name="">
+            <option value="">Select Business Partner</option>
+            <option value="" selected>Berners Finans AB</option>
+            <option value="">Select Business Partner</option>
+            <option value="">Select Business Partner</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid py-4">
+
+        <div class="container pt-5">
+
+            <div class="card">
+
+              <div class="bp-headbar rounded-top">
+                <div class="bp-headbar-img-container">
+                  <div class="bp-headbar-img"></div>
+                </div>
+                <div class="bp-headbar-inner border-bottom">
+                  <p class="h4 d-inline text-dark mr-3">Berners Finans AB</p>
+                  <sup><span class="badge badge-pill badge-info">asd</span></sup>
+                  <sup><span class="badge badge-pill badge-danger">asd</span></sup>
+                </div>
+              </div>
+
+              <div class="card-body small">
+
+                <div class="row py-3 small">
+                  <div class="col">
+                    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                </div>
+
+                <div class="container-fluid bg-white">
+                  <div class="custom-tab home-tab bg-emric-light">
+                    <span class="">Equipment</span>
+                  </div>
+
+                  <div class="custom-tab bg-emric-dark">
+                    <span class="">Business type</span>
+                  </div>
+
+                  <div class="custom-tab bg-emric-dark">
+                    <span class="">Something else</span>
+                  </div>
+                </div>
+
+                <div class="container-fluid bp-tab-content">
+                  asd
+                </div>
+
+                <div class="border-top pt-2">
+                  <a href="#" class="card-link">Link</a>
+                </div>
+
+              </div>
+            </div>
+
+      </div>
+    </div>
+
+  </body>
+</html>
