@@ -107,7 +107,7 @@
       }
       .bp-headbar-img {
         height: 100%;
-        weigh: 100%;
+        width: 100%;
         /* background: url(Berners_Finans_logo.png); */
         background: url(tieto.jpg);
         background-repeat: no-repeat;
@@ -139,6 +139,10 @@
         background: -webkit-linear-gradient(90deg, rgba(48,127,166,1) 0%, rgba(29,76,100,1) 49%, rgba(12,28,36,1) 100%);
         background: linear-gradient(90deg, rgba(48,127,166,1) 0%, rgba(29,76,100,1) 49%, rgba(12,28,36,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#307fa6",endColorstr="#0c1c24",GradientType=1);
+      }
+      #map {
+        width: 100%;
+        height: 300px;
       }
     </style>
 
@@ -233,28 +237,28 @@
             </div>
 
             <div class="col">
-
+                <div class="row">
+                    <div class="col border-left">
+                      <div class="form-group">
+                        <label for="">ASd</label>
+                        <select class="form-control form-control-sm" name="">
+                          <option value="">Option 1</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col border-left">
+                      <div class="form-group">
+                        <label for="">ASd</label>
+                        <select class="form-control form-control-sm" name="">
+                          <option value="">Option 1</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
             </div>
 
             <div class="col">
-              <div class="row">
-                <div class="col border-left">
-                  <div class="form-group">
-                    <label for="">ASd</label>
-                    <select class="form-control form-control-sm" name="">
-                      <option value="">Option 1</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col border-left">
-                  <div class="form-group">
-                    <label for="">ASd</label>
-                    <select class="form-control form-control-sm" name="">
-                      <option value="">Option 1</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
+              <div id="map"></div>
             </div>
           </div>
 
@@ -299,13 +303,10 @@
     <script type="text/javascript">
       window.onscroll = function() {myFunction()};
 
-      // Get the navbar
       var navbar = document.getElementById("tabs");
 
-      // Get the offset position of the navbar
       var sticky = navbar.offsetTop + document.getElementById("bp-main-div").offsetHeight - document.getElementById("navbar").offsetHeight;
 
-      // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
       function myFunction() {
         if (window.pageYOffset >= sticky) {
           navbar.classList.add("sticky")
@@ -313,7 +314,60 @@
           navbar.classList.remove("sticky");
         }
       }
+
+      //mapa
+      function initMap() {
+        //opcije mape
+        var options = {
+          center: {lat: 44.7866, lng: 20.4489},
+          zoom: 11
+        }
+        //kreiranje mape
+        var map = new google.maps.Map(document.getElementById('map'), options);
+
+        //kreiranje markera
+        var markers = [
+          {
+            coords: {lat: 44.8173, lng: 20.5096},
+            label: 'Karaburma'
+          },
+          {
+            coords: {lat: 44.8252, lng: 20.4605},
+            label: 'Dorcol',
+            content: '<h1>Test</h1>'
+          }
+        ]
+
+        for(var i = 0; i < markers.length; i++) {
+          addMarker(markers[i]);
+        }
+
+        function addMarker(props) {
+            var marker = new google.maps.Marker({
+            position: props.coords,
+            label: props.label,
+            map: map
+          });
+
+          if(props.iconImage) {
+            marker.setIcon(props.iconImage);
+          }
+
+          if(props.content) {
+            var infoWindow = new google.maps.InfoWindow({
+              content: props.content
+            });
+
+            marker.addListener('click', function(){
+              infoWindow.open(map, marker);
+            })
+          }
+        }
+      }
     </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYpFkjNA3t7skzJ-pbXd4oUVdV79U94fE&callback=initMap"
+    async defer></script>
 
   </body>
 </html>
